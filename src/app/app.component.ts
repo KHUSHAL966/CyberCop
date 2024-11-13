@@ -12,7 +12,7 @@ import { TestimonialComponent } from "./Components/testimonial/testimonial.compo
 
 import { CommonModule } from '@angular/common';
 import { LandingComponent } from './Components/landing/landing.component';
-import { NavbarComponent } from '../shared/footer/navbar/navbar.component';
+import { NavbarComponent } from '../shared/navbar/navbar.component';
 import { ListTestimonialsComponent } from "./Components/Admin/list-testimonials/list-testimonials.component";
 import { ListingTechnologiesComponent } from "./Components/Admin/listing-technologies/listing-technologies.component";
 import { BlogComponent } from "./Components/blog/blog.component";
