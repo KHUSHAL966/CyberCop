@@ -1,0 +1,141 @@
+.container {
+  max-width: 1200px;
+ /* Set max width for layout */
+}
+
+
+h2 {
+  font-size: 2.5rem; /* Heading size */
+  color: #343a40; /* Dark color */
+  margin-bottom: 20px; /* Spacing below heading */
+}
+
+p {
+  font-size: 1.2rem; /* Text size */
+  color: #666; /* Text color */
+  line-height: 1.5; /* Line height for readability */
+}
+
+/* Animation for highlighted text */
+.animated-text {
+  position: relative; /* To position pseudo-elements */
+  overflow: hidden; /* Hide overflow for animation */
+}
+
+.animated-text:before {
+  content: ""; /* Empty content for pseudo-element */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 100%; /* Start from left */
+  bottom: 0;
+  background: #007bff; /* Background color */
+  z-index: -1; /* Place behind text */
+  transition: right 0.5s ease; /* Smooth transition */
+}
+
+.animated-text:hover:before {
+  right: 0; /* Move to the right on hover */
+}
+
+.img-fluid {
+  transition: transform 0.3s ease; /* Smooth image scaling */
+}
+
+.img-fluid:hover {
+  transform: scale(1.05); /* Scale image on hover */
+}
+
+.shadow {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+
+
+.dual-tone {
+  font-size: 3rem; /* Increase font size for emphasis */
+  font-weight: bold; /* Make it bold */
+  background: linear-gradient(90deg, #ff6347, #007bff); /* Dual-tone gradient */
+  -webkit-background-clip: text; /* Clip background to text */
+  -webkit-text-fill-color: transparent; /* Make text fill transparent */
+  text-align: left; /* Align to the left */
+  position: relative; /* For pseudo-element positioning */
+  transition: color 0.3s ease; /* Smooth color transition */
+
+  &::after {
+      content: ""; /* Pseudo-element for underline effect */
+      display: block;
+      width: 100%; /* Full width */
+      height: 5px; /* Height of the underline */
+      background: #ff6347; /* Underline color */
+      position: absolute;
+      bottom: -10px; /* Position below the text */
+      left: 0; /* Align to the left */
+      transform: scaleX(0); /* Initially scale down */
+      transition: transform 0.3s ease; /* Smooth transition */
+  }
+
+  &:hover {
+      &::after {
+          transform: scaleX(1); /* Scale to full width on hover */
+      }
+  }
+}
+
+
+.honeycomb-section {
+  text-align: center; /* Center the title */
+  padding: 60px 20px; /* Padding for spacing */
+  background-color: #1a1a1a; /* Dark background for section */
+
+  .section-title {
+    font-size: 36px; /* Title size */
+    color: #f8f9fa; /* Light color for title */
+    margin-bottom: 40px; /* Space below the title */
+  }
+
+  .honeycomb-container {
+    display: flex;
+    flex-wrap: wrap; /* Wrap cells */
+    justify-content: center; /* Center honeycomb cells */
+    position: relative; /* Positioning for absolute elements */
+    max-width: 1200px; /* Max width for the container */
+    margin: 0 auto; /* Center container */
+  }
+
+  .honeycomb-cell {
+    width: 150px; /* Width of each cell */
+    height: 150px; /* Height of each cell */
+    margin: 10px; /* Space between cells */
+    position: relative; /* For child absolute positioning */
+    background-color: hsl(0, 0%, 100%); /* Dark background for each cell */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); /* Darker box shadow */
+    overflow: hidden; /* Hide overflow */
+    text-align: center; /* Center text inside cells */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation for transform and shadow */
+
+    img {
+      width: 100%; /* Full width image */
+      height: auto; /* Maintain aspect ratio */
+      display: block; /* Block display for images */
+    }
+
+    h3 {
+      margin: 10px 0; /* Margin above and below */
+      font-size: 18px; /* Service name font size */
+      color: #0080ff; /* Light color for service name */
+    }
+
+    /* Animation effect on hover */
+    &:hover {
+      transform: scale(1.1); /* Scale up the cell */
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5); /* Increase shadow depth */
+    }
+
+    &:nth-child(odd) {
+      margin-top: 40px; /* Offset for zigzag effect */
+    }
+  }
+
+}

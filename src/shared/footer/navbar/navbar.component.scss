@@ -1,0 +1,178 @@
+.custom-navbar {
+  background-color: #121212; /* Dark, sleek background to reflect AI-inspired theme */
+  border-bottom: 2px solid #00bcd4; /* Neon blue accent for a techy, futuristic feel */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+
+  .navbar-brand {
+    color: #00bcd4; /* Neon blue for brand text */
+    font-family: 'Roboto', sans-serif; /* Clean, futuristic font */
+    font-size: 2rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    letter-spacing: 1px;
+
+    i {
+      color: #00bcd4; /* Icon color */
+      font-size: 2rem;
+      margin-right: 0.5rem;
+      transform: rotate(15deg); /* Slight rotation for a unique touch */
+      transition: transform 0.3s ease;
+    }
+
+    &:hover i {
+      transform: rotate(-15deg); /* Rotate icon on hover */
+    }
+  }
+
+  .navbar-toggler {
+    border: none;
+    outline: none;
+    color: #00bcd4; /* Neon color for the toggler */
+    .navbar-toggler-icon {
+      background-color: transparent;
+      border: 1px solid #00bcd4; /* Neon border for the icon */
+      position: relative;
+      width: 30px;
+      height: 30px;
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background-color: #00bcd4;
+        transition: all 0.3s ease;
+      }
+
+      &::before {
+        top: 0;
+        transform: translateY(8px);
+      }
+
+      &::after {
+        bottom: 0;
+        transform: translateY(-8px);
+      }
+    }
+
+    &.collapsed .navbar-toggler-icon::before {
+      transform: rotate(45deg) translateY(0);
+    }
+    &.collapsed .navbar-toggler-icon::after {
+      transform: rotate(-45deg) translateY(0);
+    }
+  }
+
+  .navbar-collapse {
+    justify-content: space-between;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    font-size: 1rem;
+  }
+
+  .navbar-nav {
+    display: flex;
+    gap: 20px;
+
+    .nav-link {
+      color: #b0bec5; /* Soft, futuristic gray color */
+      position: relative;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      letter-spacing: 1px;
+
+      &:hover {
+        color: #00bcd4; /* Neon blue on hover */
+        text-shadow: 0 0 15px #00bcd4, 0 0 30px #00bcd4;
+      }
+
+      /* Glowing underline effect */
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #00bcd4;
+        transform: scaleX(0);
+        transform-origin: bottom right;
+        transition: transform 0.3s ease;
+      }
+
+      &:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+      }
+
+      /* Active state with glowing and bold effect */
+      &:active {
+        color: #fff;
+        font-weight: bold;
+        box-shadow: 0 0 20px rgba(0, 188, 212, 0.8);
+      }
+    }
+  }
+
+  /* Mobile-specific styling */
+  @media (max-width: 991px) {
+    .navbar-nav {
+      flex-direction: column;
+      align-items: center;
+      background-color: #1f1f1f;
+      padding: 1.5rem 0;
+    }
+
+    .nav-link {
+      font-size: 1.25rem;
+      padding: 1rem;
+      color: #b0bec5;
+      letter-spacing: 0.5px;
+
+      &:hover {
+        color: #00bcd4;
+        text-shadow: 0 0 15px #00bcd4, 0 0 30px #00bcd4;
+      }
+
+      &:active {
+        color: #ffffff;
+        box-shadow: 0 0 15px rgba(0, 188, 212, 0.6);
+      }
+    }
+
+    .navbar-toggler {
+      color: #00bcd4;
+      .navbar-toggler-icon {
+        background-color: #00bcd4;
+      }
+    }
+  }
+
+  /* Dynamic background transition on scroll */
+  &.scrolling {
+    background-color: #121212;
+  }
+
+  /* AI-inspired animation */
+  @keyframes ai-shift {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .navbar-brand {
+    animation: 1s ease-in-out infinite;
+  }
+}

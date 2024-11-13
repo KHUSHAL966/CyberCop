@@ -1,0 +1,189 @@
+.testimonial-section {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #001f3f, #003366); /* Dark blue theme */
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: rgba(0, 51, 102, 0.9); /* Adjust transparency for dark theme */
+    clip-path: ellipse(70% 100% at 50% 100%);
+    z-index: -1;
+  }
+
+  .testimonial-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+
+    h2 {
+      margin: 0;
+      font-size: 32px;
+      font-weight: bold;
+      color: #ffffff; /* Light text for contrast */
+      text-align: center;
+      flex-grow: 1;
+      position: relative;
+
+      &:after {
+        content: "";
+        display: block;
+        width: 50px;
+        height: 3px;
+        background: #00aaff; /* Underline with light brand color */
+        margin: 10px auto;
+      }
+    }
+
+    .scroll-buttons {
+      display: flex;
+      align-items: center;
+
+      .scroll-button {
+        background: linear-gradient(135deg, #00aaff, #0077cc); /* Gradient for button */
+        border: none;
+        color: white;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        cursor: pointer;
+        margin-left: 15px;
+        transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+        font-size: 24px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+
+        &:hover {
+          background: linear-gradient(135deg, #0077cc, #00aaff);
+          transform: scale(1.1);
+          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        i {
+          font-size: 28px;
+          margin: 0;
+        }
+
+        &.animated {
+          animation: pulse 1.5s infinite;
+        }
+      }
+    }
+  }
+}
+
+.testimonial-container {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  padding: 20px 0;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .testimonial {
+    background: linear-gradient(135deg, #003366, #004080); /* Dark blue gradient */
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    min-width: 300px;
+    flex-shrink: 0;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .tech-icon {
+      margin-bottom: 15px;
+      font-size: 40px;
+      color: #00aaff; /* Light blue for icons */
+    }
+
+    p {
+      font-size: 18px;
+      color: #e0e0e0; /* Light grey for text */
+      margin: 10px 0;
+    }
+
+    h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #00aaff;
+      margin: 0;
+    }
+  }
+}
+
+/* Media queries for responsiveness */
+
+@media (max-width: 1024px) {
+  .testimonial-header h2 {
+    font-size: 28px; /* Adjust title size for tablet screens */
+  }
+
+  .testimonial-container {
+    gap: 20px; /* Reduce gap between testimonials */
+  }
+
+  .testimonial {
+    min-width: 250px; /* Reduce width on medium screens */
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonial-header {
+    flex-direction: column; /* Stack header items on top of each other */
+    align-items: flex-start;
+  }
+
+  .testimonial-header h2 {
+    font-size: 24px; /* Adjust title size for small screens */
+  }
+
+  .testimonial-container {
+    flex-direction: column;
+    align-items: center; /* Center the testimonials */
+    gap: 15px;
+  }
+
+  .testimonial {
+    min-width: 100%; /* Full width for mobile devices */
+    margin: 0 10px;
+    padding: 15px;
+  }
+
+  .scroll-buttons {
+    display: none; /* Hide scroll buttons on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonial-header h2 {
+    font-size: 20px; /* Smaller title size for very small screens */
+  }
+
+  .testimonial-container {
+    gap: 10px; /* Reduce gap further */
+  }
+
+  .testimonial {
+    padding: 10px;
+    min-width: 100%;
+  }
+
+  .testimonial p {
+    font-size: 16px; /* Smaller text size for mobile */
+  }
+}

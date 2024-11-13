@@ -1,0 +1,248 @@
+.contact-us-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 60px 20px;
+  background-color: #f8f9fa;
+
+  /* Left Side Styles */
+  .contact-left {
+    flex: 1;
+    padding-right: 20px; /* Space between left and right sections */
+
+    h2 {
+      font-size: 2rem;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .attractive-design {
+      img {
+        max-width: 100%; /* Responsive image */
+        height: auto; /* Ensure the image height adjusts accordingly */
+      }
+    }
+  }
+
+  /* Right Side Styles */
+  .contact-right {
+    flex: 1;
+    padding-left: 20px; /* Space between left and right sections */
+
+    .contact-form {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+      h2 {
+        font-size: 1.8rem;
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+
+        label {
+          display: block;
+          margin-bottom: 5px;
+          font-size: 0.9rem;
+          color: #555;
+        }
+
+        input,
+        textarea {
+          width: 100%; /* Full width */
+          padding: 10px;
+          border: 1px solid #ddd;
+          border-radius: 5px;
+          font-size: 1rem;
+          transition: border-color 0.3s ease;
+
+          &:focus {
+            border-color: #007bff; /* Change border color on focus */
+            outline: none;
+          }
+        }
+
+        textarea {
+          height: 100px; /* Fixed height for the message area */
+        }
+      }
+
+      button {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #0056b3; /* Darker blue on hover */
+        }
+      }
+    }
+  }
+
+  /* Media Queries for Responsiveness */
+  @media (max-width: 1024px) {
+    .contact-left,
+    .contact-right {
+      padding: 0 10px; /* Reduce padding */
+    }
+
+    h2 {
+      font-size: 1.5rem; /* Adjust header size for mid-sized screens */
+    }
+
+    p {
+      font-size: 1rem; /* Adjust text size for mid-sized screens */
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column; /* Stack elements on smaller screens */
+
+    .contact-left,
+    .contact-right {
+      padding: 0; /* Remove padding */
+      margin-bottom: 20px; /* Space between stacked elements */
+    }
+
+    .contact-form {
+      padding: 20px; /* Reduce padding inside form */
+    }
+
+    h2 {
+      font-size: 1.3rem; /* Smaller font size for mobile */
+    }
+
+    p {
+      font-size: 0.95rem; /* Smaller font size for mobile */
+    }
+
+    /* Adjust button size */
+    button {
+      padding: 8px 12px;
+      font-size: 0.9rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 40px 10px; /* Adjust padding for very small screens */
+
+    .contact-left,
+    .contact-right {
+      margin-bottom: 15px; /* Adjust space between sections */
+    }
+
+    h2 {
+      font-size: 1.2rem; /* Even smaller header for very small screens */
+    }
+
+    p {
+      font-size: 0.9rem; /* Smaller text for very small screens */
+    }
+
+    .attractive-design img {
+      height: auto; /* Ensure the image resizes on small screens */
+    }
+  }
+ /* Overlay to darken the background */
+.dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensures the dialog appears on top of other elements */
+  animation: fadeIn 0.3s ease-in-out; /* Fade-in animation for overlay */
+}
+
+/* Dialog Box */
+.dialog-box {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px; /* Rounded corners */
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  font-family: 'Arial', sans-serif;
+  animation: slideIn 0.5s ease-out; /* Slide-in animation */
+}
+
+/* Header (title) inside the dialog */
+.dialog-box h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+/* Message text inside the dialog */
+.dialog-box p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+/* Button inside the dialog */
+.dialog-box button {
+  padding: 12px 30px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for the button */
+}
+
+.dialog-box button:hover {
+  background-color: #0056b3;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow on hover */
+}
+
+/* Fade-in animation for overlay */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Slide-in animation for the dialog box */
+@keyframes slideIn {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+}

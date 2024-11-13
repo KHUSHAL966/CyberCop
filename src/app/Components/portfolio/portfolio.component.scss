@@ -1,0 +1,119 @@
+.template-section {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #f8f9fa;
+
+  /* Section Heading Styling */
+  .section-header {
+    margin-bottom: 40px;
+
+    h2 {
+      font-size: 2.5rem;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #555;
+    }
+  }
+
+  /* Card Container Styling */
+  .card-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    .card-wrapper {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 60px; /* Space for label */
+    }
+
+    /* Curved Card Styling */
+    .curved-card {
+      background-color: white;
+      border-radius: 20px;
+      width: 310px;
+      height: auto; /* Allow height to adjust based on image size */
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      /* Card Image */
+      .card-image {
+        border-radius: 20px; /* Round corners */
+        width: 100%; /* Responsive width */
+        height: auto; /* Maintain aspect ratio */
+      }
+
+      /* Hover Effect */
+      &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+
+        /* Change Label Color on Hover */
+        + .card-label {
+          color: #ff6584; /* Change label color on hover */
+        }
+      }
+    }
+
+    /* Card Label Styling */
+    .card-label {
+      position: absolute;
+      bottom: -25px; /* Adjust label position outside the card */
+      color: #333; /* Set label text color */
+      font-size: 0.9rem;
+      z-index: 1; /* Ensure label is on top */
+      left: 50%; /* Center the label */
+      transform: translateX(-50%); /* Adjust for center alignment */
+    }
+  }
+
+  /* Media Queries for Responsiveness */
+  @media (max-width: 1024px) {
+    .card-container {
+      justify-content: space-between;
+
+      .card-wrapper {
+        .curved-card {
+          width: 300px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .card-container {
+      flex-direction: column;
+      align-items: center;
+
+      .card-wrapper {
+        .curved-card {
+          width: 90%; /* Set to 90% width for a wider card */
+          max-width: 350px; /* Optional max width for larger mobile screens */
+        }
+      }
+    }
+  }
+
+  @media (max-width: 576px) {
+    .section-header h2 {
+      font-size: 2rem;
+    }
+
+    .section-header p {
+      font-size: 1rem;
+    }
+
+    .card-wrapper {
+      .curved-card {
+        width: 90%; /* Maintain wider card */
+        max-width: 350px; /* Optional max width for smaller screens */
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  <app-navbar></app-navbar>
+  <router-outlet></router-outlet>
+  <div class="landing-section" id="landing">
+
+    <app-landing></app-landing>
+  </div>
+
+  <div  id="about">
+    <app-about></app-about>
+  </div>
+
+
+  <app-testimonial id="testimonials"></app-testimonial>
+  <div>
+    <app-portfolio id="portfolio"></app-portfolio>
+  </div>
+  <div>
+    <app-blog id="technologies"></app-blog>
+  </div>
+  <div>
+    <app-faq id="faq"></app-faq>
+  </div>
+
+  <div class="contact-section" id="contact">
+    <app-contact></app-contact>
+  </div>
+
+
+  <section>
+    <app-footer></app-footer>
+  </section>
+
+
+  <button *ngIf="isVisible" class="scroll-to-top" (click)="scrollToTop()" aria-label="Scroll to top">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="white">
+      <path d="M12 4l-8 8h5v8h6v-8h5l-8-8z" />
+    </svg>
+  </button>
+
+</body>
+
+</html>

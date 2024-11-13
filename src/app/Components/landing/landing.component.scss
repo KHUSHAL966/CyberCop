@@ -1,0 +1,58 @@
+.landing-section {
+  height:100vh;
+  // background-image: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-4.0.3&q=80&w=1080');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  .slider {
+    margin-top: 20px;
+    .carousel-caption {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    }
+  }
+
+  .content {
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.6); // Semi-transparent background
+    border-radius: 8px; // Rounded corners
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  }
+
+  h1 {
+    font-size: 3rem;
+    margin: 0;
+    animation: fadeIn 1s forwards; // CSS animation for additional effects
+  }
+
+  p {
+    font-size: 1.5rem;
+    max-width: 600px;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    color: white;
+    background-color: #ffcc00; // Button color
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .btn:hover {
+    background-color: #e6b800; // Darken on hover
+  }
+}

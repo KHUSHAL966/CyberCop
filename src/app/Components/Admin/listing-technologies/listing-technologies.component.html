@@ -1,0 +1,32 @@
+<div class="container">
+  <h2>Technologies Form</h2>
+
+  <form [formGroup]="serviceForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <label for="technologies">Technologies</label>
+      <input type="text" id="technologies" formControlName="technologies" class="form-control" />
+      <div *ngIf="serviceForm.get('technologies')?.invalid && serviceForm.get('technologies')?.touched" class="text-danger">
+        Technologies are required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="iconName">Icon Name</label>
+      <input type="text" id="iconName" formControlName="iconName" class="form-control" />
+      <div *ngIf="serviceForm.get('iconName')?.invalid && serviceForm.get('iconName')?.touched" class="text-danger">
+        Icon name is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea id="description" formControlName="description" class="form-control"></textarea>
+      <div *ngIf="serviceForm.get('description')?.invalid && serviceForm.get('description')?.touched" class="text-danger">
+        Description is required.
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

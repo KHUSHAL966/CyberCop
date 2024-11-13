@@ -1,0 +1,33 @@
+<div class="container">
+  <h2>Testimonials Form</h2>
+
+  <form [formGroup]="serviceForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <label for="serviceName">Service Name</label>
+      <input type="text" id="serviceName" formControlName="serviceName" class="form-control" />
+      <div *ngIf="serviceForm.get('serviceName')?.invalid && serviceForm.get('serviceName')?.touched" class="text-danger">
+        Service name is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" formControlName="name" class="form-control" />
+      <div *ngIf="serviceForm.get('name')?.invalid && serviceForm.get('name')?.touched" class="text-danger">
+        Name is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea id="description" formControlName="description" class="form-control"></textarea>
+      <div *ngIf="serviceForm.get('description')?.invalid && serviceForm.get('description')?.touched" class="text-danger">
+        Description is required.
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+

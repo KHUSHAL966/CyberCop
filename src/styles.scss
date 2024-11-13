@@ -1,0 +1,67 @@
+// @import "~@fortawesome/fontawesome-free/css/all.min.css";
+// @import "~@bootstrap-icons/font/bootstrap-icons.css";
+
+
+
+.landing-section {
+  height: 100vh;
+  background:  url('assets/t5.webp') center/cover no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+
+ .contact-section {
+  // height: 100vh;
+  padding: 2rem; background: yellow;
+}
+html {
+  scroll-behavior: smooth;
+
+}
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column; // Stack links vertically on small screens
+  }
+
+  h1 {
+    font-size: 2.5rem; // Adjust heading size
+  }
+
+  p {
+    font-size: 1.2rem; // Adjust paragraph size
+  }
+}
+
+
+.dual-tone {
+  font-size: 3rem; /* Adjust the font size as needed */
+  font-weight: bold; /* Make it bold */
+  background: linear-gradient(90deg, #ff6347, #007bff); /* Dual-tone gradient */
+  -webkit-background-clip: text; /* Clip background to text */
+  -webkit-text-fill-color: transparent; /* Make text fill transparent */
+  text-align: center; /* Center the text */
+  position: relative; /* For pseudo-element positioning */
+  margin: 0 auto; /* Center margin for better alignment */
+
+  &::after {
+      content: ""; /* Pseudo-element for underline effect */
+      display: block;
+      width: 100%; /* Full width */
+      height: 5px; /* Height of the underline */
+      background: #ff6347; /* Underline color */
+      position: absolute;
+      bottom: -10px; /* Position below the text */
+      left: 0; /* Align to the left */
+      transform: scaleX(0); /* Initially scale down */
+      transition: transform 0.3s ease; /* Smooth transition */
+  }
+
+  &:hover {
+      &::after {
+          transform: scaleX(1); /* Scale to full width on hover */
+      }
+  }
+
+
+}

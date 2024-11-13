@@ -1,0 +1,13 @@
+<section class="testimonial-section">
+  <h2 class="testimonial-title">What Our Clients Say</h2>
+  <div class="testimonial-container">
+    @for (testimonial of Testimonials; track $index) {
+      <div class="testimonial-card" >
+        <p class="testimonial-text">{{ testimonial.description }}</p>
+        <h3 class="client-name">{{ testimonial.name }}</h3>
+        <p class="client-service">{{ testimonial.serviceName }}</p>
+      </div>
+    }
+
+  </div>
+</section>

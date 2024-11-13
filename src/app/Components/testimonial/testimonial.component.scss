@@ -1,0 +1,68 @@
+.testimonial-section {
+  text-align: center; /* Center the title */
+  padding: 60px 20px; /* Padding for spacing */
+  background-color: #f0f4f8; /* Background color for the section */
+  position: relative; /* Positioning for absolute elements */
+
+  .testimonial-title {
+    font-size: 36px; /* Title size */
+    color: #333; /* Title color */
+    margin-bottom: 40px; /* Space below the title */
+  }
+
+  .testimonial-container {
+    display: flex;
+    flex-wrap: wrap; /* Wrap cards */
+    justify-content: center; /* Center testimonial cards */
+    max-width: 1200px; /* Max width for the container */
+    margin: 0 auto; /* Center container */
+  }
+
+  .testimonial-card {
+    width: 300px; /* Width of each card */
+    margin: 20px; /* Space between cards */
+    background-color: #fff; /* Background color for each card */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+    padding: 20px; /* Padding inside cards */
+    position: relative; /* For child absolute positioning */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation for transform and shadow */
+
+    .testimonial-text {
+      font-size: 16px; /* Text size */
+      color: #555; /* Text color */
+      margin-bottom: 15px; /* Space below text */
+      font-style: italic; /* Italic for testimonials */
+    }
+
+    .client-name {
+      font-size: 18px; /* Client name font size */
+      color: #333; /* Client name color */
+      margin-bottom: 5px; /* Space below name */
+      font-weight: bold; /* Bold for names */
+    }
+
+    .client-service {
+      font-size: 14px; /* Service name font size */
+      color: #777; /* Service name color */
+    }
+
+    /* Animation effect on hover */
+    &:hover {
+      transform: scale(1.05); /* Scale up the card */
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* Increase shadow depth */
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonial-card {
+    width: 80%; /* Adjust width for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonial-card {
+    width: 100%; /* Full width for mobile */
+  }
+}

@@ -1,0 +1,101 @@
+.container {
+  max-width: 1200px; /* Set max width for better layout */
+  width: 100%; /* Ensure it doesn't overflow */
+  margin: 0 auto; /* Center align */
+}
+
+h1 {
+  font-size: 4rem; /* Bigger heading size for emphasis */
+  background: linear-gradient(90deg, #ff7e5f, #feb47b); /* Gradient effect from pink to orange */
+  color: transparent; /* Make the color transparent to show gradient */
+  -webkit-background-clip: text; /* Clip gradient to text */
+  background-clip: text; /* Clip gradient to text for other browsers */
+  margin-bottom: 25px; /* Increased spacing below */
+  text-align: center; /* Center align */
+  font-weight: 800; /* Extra bold for a strong effect */
+  text-transform: uppercase; /* Make the text uppercase */
+  letter-spacing: 1.5px; /* Slight spacing for readability */
+  position: relative;
+}
+
+h1::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 5px;
+  background-color: #feb47b; /* Matching color for underline */
+  border-radius: 2px;
+}
+
+.faq-form {
+  background-color: #f8f9fa; /* Light background for form */
+  border: 1px solid #ddd; /* Light border */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: box-shadow 0.3s ease; /* Smooth transition */
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.faq-form:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+}
+
+.accordion-button {
+  background-color: #007bff; /* Primary color for buttons */
+  color: white; /* Text color */
+  font-weight: bold; /* Bold text */
+}
+
+.accordion-button:not(.collapsed) {
+  color: #fff; /* White text when expanded */
+  background-color: #0056b3; /* Darker background when expanded */
+}
+
+.accordion-body {
+  background-color: #e9ecef; /* Light background for the answer */
+  border-radius: 0 0 0.25rem 0.25rem; /* Rounded bottom corners */
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem; /* Adjust heading size for smaller screens */
+  }
+
+  .container {
+    padding: 0 15px; /* Add padding to container for smaller screens */
+  }
+
+  .faq-form {
+    padding: 15px; /* Adjust form padding */
+  }
+
+  .accordion-button {
+    font-size: 1rem; /* Adjust button font size */
+  }
+
+  .accordion-body {
+    font-size: 0.9rem; /* Adjust body font size */
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem; /* Further reduce heading size for mobile */
+  }
+
+  .faq-form {
+    padding: 10px; /* Reduce padding for mobile */
+  }
+
+  .accordion-button {
+    font-size: 0.9rem; /* Adjust button font size for mobile */
+  }
+
+  .accordion-body {
+    font-size: 0.8rem; /* Adjust body font size for mobile */
+  }
+  
+}

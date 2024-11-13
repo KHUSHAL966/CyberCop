@@ -1,0 +1,96 @@
+
+
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff; /* Button background color */
+  color: white;              /* Button text color */
+  border: none;              /* Remove border */
+  padding: 15px;             /* Square size (15px height and width) */
+  cursor: pointer;           /* Cursor style on hover */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+  transition: background-color 0.3s ease; /* Transition for hover effect */
+
+  &:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+  }
+
+  /* Add a square border */
+  border-radius: 5px; /* Optional: slightly rounded corners */
+  font-size: 16px; /* Font size for button text */
+}
+
+div.cust/* Landing Section - Federal Blue */
+.landing-section {
+  background-color: #03045e;
+  color: white;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* About Section - Honolulu Blue */
+.about-section {
+  background-color: #0077b6;
+  color: white;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Testimonial Section - Pacific Cyan */
+.testimonial-section {
+  background-color: #00b4d8;
+  color: white;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Portfolio Section - Non-Photo Blue */
+.portfolio-section {
+  background-color: #90e0ef;
+  color: black;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Blog Section - Light Cyan */
+.blog-section {
+  background-color: #caf0f8;
+  color: black;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* FAQ Section - Light Cyan */
+.faq-section {
+  background-color: #caf0f8;
+  color: black;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Contact Section - Non-Photo Blue */
+.contact-section {
+  background-color: #f3f7f8;
+  color: black;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Footer Section - Federal Blue */
+.footer-section {
+  background-color: #03045e;
+  color: white;
+  padding: 20px;
+}
+
+

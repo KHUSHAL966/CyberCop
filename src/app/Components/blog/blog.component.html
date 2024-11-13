@@ -1,0 +1,28 @@
+<!-- Include Font Awesome in your index.html -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<div class="testimonial-section">
+  <div class="testimonial-header">
+    <h2>Technologies</h2>
+    <div class="scroll-buttons">
+      <button class="scroll-button" (click)="scrollLeft()">
+        <i class="fas fa-chevron-left"></i> <!-- Left Arrow Icon -->
+      </button>
+      <button class="scroll-button" (click)="scrollRight()">
+        <i class="fas fa-chevron-right"></i> <!-- Right Arrow Icon -->
+      </button>
+    </div>
+  </div>
+
+  <div class="testimonial-container" #scrollContainer>
+    @for (tech of Technologies; track $index) {
+      <div class="testimonial" >
+        <div class="tech-icon">
+          <i class="{{tech.iconName}}"></i> <!-- Replace with relevant icons -->
+        </div>
+        <p>{{ tech.description }}</p>
+        <h3>- {{ tech.technologies }}</h3>
+      </div>
+    }
+
+  </div>

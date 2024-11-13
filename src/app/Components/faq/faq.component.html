@@ -1,0 +1,146 @@
+<div class="container my-5">
+  <h1 class="text-center mb-4 display-4">Frequently Asked Questions</h1>
+  <div class="row">
+
+    <!-- Left Side FAQ Form -->
+    <div class="col-md-4">
+      <div class="faq-form bg-light p-4 rounded shadow">
+        <h2 class="text-center text-primary mb-3">Have a Question?</h2>
+        <p class="text-center mb-4">Fill out the form below to get in touch with us.</p>
+
+        <!-- Success message shown after form submission -->
+        <div *ngIf="formSubmitted" class="alert alert-success mb-4">
+          Your form has been submitted successfully!
+        </div>
+
+        <form [formGroup]="faqform" (ngSubmit)="onSubmit()" #formDir="ngForm">
+          <div class="form-group mb-3">
+            <label for="fullname" class="form-label">Full Name</label>
+            <input type="text" id="fullname" class="form-control" placeholder="Your Name" formControlName="fullname" />
+            <div *ngIf="submitted && faqform.get('fullname').invalid" class="text-danger">
+              Full Name is required.
+            </div>
+          </div>
+          <div class="form-group mb-3">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" id="email" class="form-control" placeholder="Your Email" formControlName="email" />
+            <div *ngIf="submitted && faqform.get('email').invalid" class="text-danger">
+              <div *ngIf="faqform.get('email').hasError('required')">Email is required.</div>
+              <div *ngIf="faqform.get('email').hasError('email')">Enter a valid email.</div>
+            </div>
+          </div>
+          <div class="form-group mb-3">
+            <label for="question" class="form-label">Your Question</label>
+            <textarea id="question" class="form-control" placeholder="Ask your question" rows="4" formControlName="question"></textarea>
+            <div *ngIf="submitted && faqform.get('question').invalid" class="text-danger">
+              Question is required.
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Submit</button>
+        </form>
+      </div>
+    </div>
+      <!-- Right Side Accordion -->
+      <div class="col-md-8">
+        <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        What services do you offer?
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        We offer a variety of services including expert guidance, personalized support, and cutting-edge technology solutions tailored to your unique needs.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        How can I get started with your platform?
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Getting started is simple! Just sign up on our website, choose the service you need, and our team will guide you through the next steps.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Is there any support available if I face issues?
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Yes, our customer support team is available 24/7 to assist you with any issues you might encounter. You can reach us via email, chat, or phone.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        What makes your services different from others?
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        We prioritize personalized service, use the latest technology, and ensure that our solutions are tailored to help you achieve your desired results with minimal effort.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFive">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        Are your services affordable?
+                    </button>
+                </h2>
+                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        We offer a range of pricing plans designed to fit different budgets, with transparent pricing and no hidden fees. We believe in delivering great value for your investment.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingSix">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                        How can I contact customer support?
+                    </button>
+                </h2>
+                <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        You can reach out to our customer support via the contact form or by email.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingSeven">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                        Where can I find more information about your services?
+                    </button>
+                </h2>
+                <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        More information about our services can be found on our website's service page.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingEight">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                        What is the purpose of this FAQ section?
+                    </button>
+                </h2>
+                <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        This FAQ section provides answers to common questions users may have about our services.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  </div>
+</div>

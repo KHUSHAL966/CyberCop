@@ -1,0 +1,82 @@
+<div class="contact-us-section">
+  <div class="contact-left">
+    <h2>Get in Touch</h2>
+    <p>We would love to hear from you! Fill out the form to reach us.</p>
+    <div class="attractive-design">
+      <img src="assets/c1.png" alt="Attractive Design" />
+    </div>
+  </div>
+
+  <div class="contact-right">
+    <div class="contact-form">
+      <h2>Contact Us</h2>
+      <form [formGroup]="contactform" (ngSubmit)="submit()" #formDir="ngForm">
+        <div class="form-group">
+          <label for="fullname">Full Name</label>
+          <input
+            type="text"
+            id="fullname"
+            placeholder="Your Name"
+            formControlName="fullname"
+            required
+          />
+          <div *ngIf="contactform.get('fullname')?.touched && contactform.get('fullname')?.invalid">
+            <small *ngIf="contactform.get('fullname')?.hasError('required')">Full Name is required.</small>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="Your Email"
+            formControlName="email"
+            required
+          />
+          <div *ngIf="contactform.get('email')?.touched && contactform.get('email')?.invalid">
+            <small *ngIf="contactform.get('email')?.hasError('required')">Email Address is required.</small>
+            <small *ngIf="contactform.get('email')?.hasError('email')">Please enter a valid email address.</small>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="contact-number">Contact Number</label>
+          <input
+            type="tel"
+            id="contact-number"
+            placeholder="Your Contact Number"
+            formControlName="contactNo"
+            required
+            pattern="^[0-9]{10}$"
+          />
+          <div *ngIf="contactform.get('contactNo')?.touched && contactform.get('contactNo')?.invalid">
+            <small *ngIf="contactform.get('contactNo')?.hasError('required')">Contact Number is required.</small>
+            <small *ngIf="contactform.get('contactNo')?.hasError('pattern')">Please enter a valid 10-digit contact number.</small>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea
+            id="message"
+            placeholder="Your Message"
+            formControlName="message"
+            required
+          ></textarea>
+          <div *ngIf="contactform.get('message')?.touched && contactform.get('message')?.invalid">
+            <small *ngIf="contactform.get('message')?.hasError('required')">Message is required.</small>
+          </div>
+        </div>
+        <!-- Submit button without disabling -->
+        <button type="submit">Submit</button>
+      </form>
+
+      <!-- Success Message Box (only shown after form submission) -->
+      <div class="dialog-overlay" *ngIf="isDialogVisible">
+        <div class="dialog-box">
+          <h2>Submission Successful</h2>
+          <p>Your information has been sent to Cyber Cop. We will contact you soon!</p>
+          <button (click)="closeDialog()">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
