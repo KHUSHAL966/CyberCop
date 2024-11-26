@@ -1,0 +1,2 @@
+providers: [provideRouter(routes),provideAnimations(),provideHttpClient(),provideToastr(),]
+};
